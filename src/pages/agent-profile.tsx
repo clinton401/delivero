@@ -5,7 +5,7 @@ import {
     AvatarFallback,
     AvatarImage,
   } from "@/components/ui/avatar";
-  import { Star, Bike, Truck, User2, MapPin, Phone, Mail } from 'lucide-react'
+  import { Star, User2, MapPin, Phone, Mail } from 'lucide-react'
 import {
     Card,
     CardContent,
