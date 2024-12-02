@@ -1,4 +1,4 @@
-import {FC, useContext} from "react";
+import {FC, useContext, useEffect} from "react";
 import {myContext} from "../App";
 import {
     Avatar,
@@ -18,7 +18,15 @@ import {
     const {agents} = useContext(myContext)
     const {id} = useParams();
     const navigate = useNavigate();
-
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", 
+        });
+      };
+      useEffect(() => {
+        scrollToTop()
+      }, [])
     const agent = agents.find(agt => {
         return agt.id === Number(id)
     });
