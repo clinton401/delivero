@@ -33,7 +33,7 @@ export const AgentModal: FC<AgentModalProps> = ({
                       <div className="w-full flex-wrap gap-y-4 items-center justify-center divide-x-4 divide-background"></div>
                       {agent?.whatsappNumber && (
                         <a
-                          href={`https://wa.me/${agent.whatsappNumber}?text=Delivery%services%needed`}
+                          href={`https://wa.me/${agent.whatsappNumber}?text=${encodeURIComponent("Delivery services needed")}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full flex items-center justify-center py-2 px-4 text-center text-foreground rounded bg-secondary"
