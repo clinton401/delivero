@@ -1,27 +1,32 @@
 import {FC, createContext} from "react";
 import {Routess} from "./routess"
 import {Navbar} from "./layout/navbar";
-import profile1 from  "./assets/man.png";
-import profile2 from  "./assets/man (1).png";
-import profile3 from  "./assets/girl.png";
-import profile4 from  "./assets/bussiness-man.png";
-import profile5 from  "./assets/avatar-design.png";
+import lss from  "./assets/lss.jpg";
+import simbi from  "./assets/simbi.jpg";
+import city from  "./assets/city.jpg";
+import ea from  "./assets/ea.jpg";
+import samsucc from  "./assets/samsucc.jpg";
+import adefem from  "./assets/adefem.jpg";
+import ajolims from  "./assets/ajolims.jpg";
+import campusdash from  "./assets/campusdash.jpg";
+import crecemi from  "./assets/crecemi.jpg";
+import deliva from  "./assets/deliva.jpg";
+import easyget from  "./assets/easyget.jpg";
+import funmihan from  "./assets/funmihan.jpg";
+import premiumKourier from  "./assets/premium-kourier.jpg";
+import miladeTaxicab from  "./assets/milade-taxicab.jpg";
+import hanglobalExpress from  "./assets/hanglobal-express.jpg";
+import aywiseFlit from  "./assets/aywise-flit.jpg";
+import jfRoyale from  "./assets/jf-royale.jpg";
+import jayantic from  "./assets/jayantic.jpg";
+import elxpressLiason from  "./assets/elxpress-liason.jpg";
+import sendSolution from  "./assets/send-solutions.jpg";
 export type  AgentType =  {
   id: number;
   name: string;
-  bio: string;
-  rating: number;
-  reviews: number;
-  vehicleType: string;
-  areaOfOperation: string;
-  completedDeliveries: number;
-  phone: string;
-  email: string;
-  availability: boolean;
   pictureUrl: string;
-  whatsappLink: string;
-  languages: string[];
-  specialties: string[];
+  whatsappNumber?: string;
+  phoneNumber?: string;
 }
 type MyContextType ={
   agents: AgentType[]
@@ -30,1013 +35,147 @@ export const myContext = createContext<MyContextType>({
   agents: []
 })
 const App: FC = ()=> {
- const agents =  [
-    { 
-        id: 1, 
-        name: "Jane Rodriguez", 
-        bio: "Dedicated delivery expert with a passion for timely and safe transportation of goods across the city.", 
-        rating: 4.7, 
-        reviews: 134, 
-        vehicleType: "Car", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 290, 
-        phone: "+2349064127322", 
-        email: "jane.rodriguez@example.com", 
-        availability: false, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2349064127319?text=Hello%20I%20need%20your%20delivery%20service", 
-        languages: ["English", "Spanish"],
-        specialties: ["Fast Food", "Grocery Delivery"]
+ const agents: AgentType[] =  [
+   
+    {
+        id: 1,
+      name: "Simbi Logistics",
+      pictureUrl: simbi,
+      whatsappNumber: "+2349152438815"
     },
-    { 
-        id: 2, 
-        name: "Michael Chen", 
-        bio: "Reliable courier specializing in quick urban deliveries with a focus on customer convenience.", 
-        rating: 4.9, 
-        reviews: 256, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 412, 
-        phone: "+2348076543210", 
-        email: "michael.chen@example.com", 
-        availability: true, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2348076543211?text=Need%20delivery%20service", 
-        languages: ["English", "Mandarin"],
-        specialties: ["Electronics", "Pharmacy Delivery"]
+    {
+      id: 2,
+      name: "LSS Logistics",
+      pictureUrl: lss ,
+      phoneNumber: "+2349039580212"
+  },
+    {
+      id: 3,
+
+      name: "City Logistics",
+      pictureUrl: city,
+      whatsappNumber: "+2348169823074"
     },
-    { 
-        id: 3, 
-        name: "Emily Okonkwo", 
-        bio: "Experienced delivery professional with a track record of precise and careful package handling.", 
-        rating: 4.6, 
-        reviews: 98, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 215, 
-        phone: "+2347012345678", 
-        email: "emily.okonkwo@example.com", 
-        availability: true, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2347012345679?text=Delivery%20service%20inquiry", 
-        languages: ["English", "Igbo"],
-        specialties: ["Restaurant Meals", "Small Packages"]
+    {
+      id: 4,
+
+      name: "EA Logistics",
+      pictureUrl: ea,
+      whatsappNumber: "+23407081635690"
     },
-    { 
-        id: 4, 
-        name: "David Thompson", 
-        bio: "Versatile delivery expert committed to exceptional service and customer satisfaction.", 
-        rating: 4.8, 
-        reviews: 187, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 350, 
-        phone: "+2349087654321", 
-        email: "david.thompson@example.com", 
-        availability: false, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2349087654322?text=Delivery%20service%20needed", 
-        languages: ["English", "French"],
-        specialties: ["Large Furniture", "Office Supplies"]
+    {
+      id: 5,
+
+      name: "Send Solutions Logistics",
+      pictureUrl: sendSolution,
+      whatsappNumber: "+2348164928952"
     },
-    { 
-        id: 5, 
-        name: "Sarah Kim", 
-        bio: "Dedicated urban courier with expertise in navigating city landscapes for swift deliveries.", 
-        rating: 4.5, 
-        reviews: 76, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 189, 
-        phone: "+2348055667788", 
-        email: "sarah.kim@example.com", 
-        availability: true, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2348055667789?text=Quick%20delivery%20service", 
-        languages: ["English", "Korean"],
-        specialties: ["Medical Supplies", "Urgent Deliveries"]
+    {
+      id: 6,
+
+      name: "Samsucc Logistics",
+      pictureUrl: samsucc,
+      whatsappNumber: "+2348050450107"
     },
-    { 
-        id: 6, 
-        name: "Mohammed Ali", 
-        bio: "Efficient delivery professional with a strong commitment to timely and secure package transportation.", 
-        rating: 4.6, 
-        reviews: 112, 
-        vehicleType: "Car", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 267, 
-        phone: "+2349031234567", 
-        email: "mohammed.ali@example.com", 
-        availability: false, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2349031234568?text=Delivery%20service%20required", 
-        languages: ["English", "Arabic"],
-        specialties: ["Electronics", "Grocery Delivery"]
+    {
+      id: 7,
+
+      name: "Elxpress Liaison and Logistics ",
+      pictureUrl: elxpressLiason,
+      phoneNumber: "+2349161174596"
     },
-    { 
-        id: 7, 
-        name: "Elena Patel", 
-        bio: "Skilled delivery expert with extensive experience in handling diverse delivery requirements.", 
-        rating: 4.7, 
-        reviews: 145, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 321, 
-        phone: "+2348098765432", 
-        email: "elena.patel@example.com", 
-        availability: true, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2348098765433?text=Need%20professional%20delivery", 
-        languages: ["English", "Gujarati"],
-        specialties: ["Restaurant Meals", "Small Packages"]
+    {
+      id: 8,
+
+      name: "Jayantic Logistics ",
+      pictureUrl: jayantic,
+      whatsappNumber: "+2347079620228"
     },
-    { 
-        id: 8, 
-        name: "Carlos Mendes", 
-        bio: "Reliable courier dedicated to providing top-notch delivery services with maximum efficiency.", 
-        rating: 4.8, 
-        reviews: 203, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 389, 
-        phone: "+2347045678901", 
-        email: "carlos.mendes@example.com", 
-        availability: false, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2347045678902?text=Delivery%20assistance%20needed", 
-        languages: ["English", "Portuguese"],
-        specialties: ["Large Furniture", "Office Supplies"]
+    {
+      id: 9,
+
+      name: "JF Royale Logistics ",
+      pictureUrl: jfRoyale,
+      whatsappNumber: "+2348035534080"
     },
-    { 
-        id: 9, 
-        name: "Anna Nguyen", 
-        bio: "Adaptable delivery professional skilled in managing various delivery challenges with ease.", 
-        rating: 4.5, 
-        reviews: 87, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 212, 
-        phone: "+2348067890123", 
-        email: "anna.nguyen@example.com", 
-        availability: true, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2348067890124?text=Quick%20delivery%20query", 
-        languages: ["English", "Vietnamese"],
-        specialties: ["Medical Supplies", "Pharmacy Delivery"]
+    {
+      id: 10,
+
+      name: "Hanglobal Express Logistics ",
+      pictureUrl: hanglobalExpress,
+      whatsappNumber: "+2347040254833"
     },
-    { 
-        id: 10, 
-        name: "Kwame Adebayo", 
-        bio: "Experienced urban delivery professional committed to prompt and secure package handling.", 
-        rating: 4.6, 
-        reviews: 129, 
-        vehicleType: "Car", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 276, 
-        phone: "+2349012345678", 
-        email: "kwame.adebayo@example.com", 
-        availability: false, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2349012345679?text=Delivery%20service%20request", 
-        languages: ["English", "Yoruba"],
-        specialties: ["Fast Food", "Urgent Deliveries"]
+    {
+      id: 11,
+
+      name: "Aywise Flit Services ",
+      pictureUrl: aywiseFlit,
+      whatsappNumber: "+2348024096961"
     },
-    { 
-        id: 11, 
-        name: "Isabella Santos", 
-        bio: "Dedicated delivery expert with a proven track record of customer satisfaction and reliability.", 
-        rating: 4.7, 
-        reviews: 156, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 235, 
-        phone: "+2348054321987", 
-        email: "isabella.santos@example.com", 
-        availability: true, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2348054321988?text=Professional%20delivery%20needed", 
-        languages: ["English", "Spanish"],
-        specialties: ["Small Packages", "Grocery Delivery"]
+    {
+      id: 12,
+
+      name: "Easyget ",
+      pictureUrl: easyget,
+      whatsappNumber: "+2348051270059"
     },
-    { 
-        id: 12, 
-        name: "Raj Patel", 
-        bio: "Versatile courier specializing in efficient and careful package transportation across urban landscapes.", 
-        rating: 4.9, 
-        reviews: 221, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 412, 
-        phone: "+2347087654321", 
-        email: "raj.patel@example.com", 
-        availability: false, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2347087654322?text=Urgent%20delivery%20service", 
-        languages: ["English", "Hindi"],
-        specialties: ["Electronics", "Large Furniture"]
+    {
+      id: 13,
+
+      name: "Premium Kourier Services ",
+      pictureUrl: premiumKourier,
+      whatsappNumber: "+2348139104933"
     },
-    { 
-        id: 13, 
-        name: "Fatima Ahmed", 
-        bio: "Professional delivery expert with a focus on precision, speed, and customer-centric service.", 
-        rating: 4.6, 
-        reviews: 104, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 289, 
-        phone: "+2349076543210", 
-        email: "fatima.ahmed@example.com", 
-        availability: true, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2349076543211?text=Delivery%20service%20inquiry", 
-        languages: ["English", "Arabic"],
-        specialties: ["Medical Supplies", "Office Supplies"]
+    {
+      id: 14,
+
+      name: "Deiva Logistics ",
+      pictureUrl: deliva,
+      whatsappNumber: "+2349073698775"
     },
-    { 
-        id: 14, 
-        name: "Luis Rodriguez", 
-        bio: "Experienced urban delivery professional known for reliable and timely package handling.", 
-        rating: 4.8, 
-        reviews: 176, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 332, 
-        phone: "+2348065432109", 
-        email: "luis.rodriguez@example.com", 
-        availability: false, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2348065432110?text=Quick%20delivery%20needed", 
-        languages: ["English", "Spanish"],
-        specialties: ["Restaurant Meals", "Urgent Deliveries"]
+    {
+      id: 15,
+
+      name: "Adefem Logistics ",
+      pictureUrl: adefem,
+      whatsappNumber: "+2348068830758"
     },
-    { 
-        id: 15, 
-        name: "Sophie Kim", 
-        bio: "Dedicated courier with exceptional skills in managing complex delivery logistics.", 
-        rating: 4.5, 
-        reviews: 92, 
-        vehicleType: "Car", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 201, 
-        phone: "+2349043210987", 
-        email: "sophie.kim@example.com", 
-        availability: true, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2349043210988?text=Professional%20delivery%20service", 
-        languages: ["English", "Korean"],
-        specialties: ["Pharmacy Delivery", "Small Packages"]
+    {
+      id: 16,
+
+      name: "Funmihan Global",
+      pictureUrl: funmihan,
+      whatsappNumber: "+23470420354833"
     },
-    { 
-        id: 16, 
-        name: "Gabriel Silva", 
-        bio: "Efficient delivery professional committed to providing top-quality service in urban environments.", 
-        rating: 4.7, 
-        reviews: 138, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 276, 
-        phone: "+2348056789012", 
-        email: "gabriel.silva@example.com", 
-        availability: false, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2348056789013?text=Delivery%20assistance%20request", 
-        languages: ["English", "Portuguese"],
-        specialties: ["Electronics", "Grocery Delivery"]
+    {
+      id: 17,
+
+      name: "Campusdash ",
+      pictureUrl: campusdash,
+      whatsappNumber: "+2348142055662"
     },
-    { 
-        id: 17, 
-        name: "Emma Thompson", 
-        bio: "Skilled delivery expert with a passion for ensuring customer satisfaction through reliable service.", 
-        rating: 4.6, 
-        reviews: 115, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 245, 
-        phone: "+2349034567890", 
-        email: "emma.thompson@example.com", 
-        availability: true, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2349034567891?text=Need%20delivery%20service", 
-        languages: ["English", "French"],
-        specialties: ["Restaurant Meals", "Small Packages"]
+    {
+      id: 18,
+
+      name: "Crecimi Logistics ",
+      pictureUrl: crecemi,
+      whatsappNumber: "+2349022027754"
     },
-    { 
-        id: 18, 
-        name: "Omar Hassan", 
-        bio: "Reliable and adaptable delivery professional with extensive experience in urban package transportation.", 
-        rating: 4.8, 
-        reviews: 192, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 367, 
-        phone: "+2348078901234", 
-        email: "omar.hassan@example.com", 
-        availability: false, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2348078901235?text=Urgent%20delivery%20needed", 
-        languages: ["English", "Arabic"],
-        specialties: ["Large Furniture", "Medical Supplies"]
+    {
+      id: 19,
+
+      name: "Milade Taxicab Logistics ",
+      pictureUrl: miladeTaxicab,
+      whatsappNumber: "+2348160777067"
     },
-    { 
-        id: 19, 
-        name: "Maya Patel", 
-        bio: "Dedicated urban courier with exceptional navigation skills and commitment to timely deliveries.", 
-        rating: 4.5, 
-        reviews: 81, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 198, 
-        phone: "+2349087654321", 
-        email: "maya.patel@example.com", 
-        availability: true, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2349087654322?text=Quick%20delivery%20service", 
-        languages: ["English", "Gujarati"],
-        specialties: ["Pharmacy Delivery", "Urgent Deliveries"]
+    {
+      id: 20,
+
+      name: "Ajolims Logistics ",
+      pictureUrl: ajolims,
+      whatsappNumber: "+2348138482789"
     },
-    { 
-        id: 20, 
-        name: "Alex Morales", 
-        bio: "Experienced delivery professional with a strong focus on secure and efficient package handling.", 
-        rating: 4.7, 
-        reviews: 163, 
-        vehicleType: "Car", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 309, 
-        phone: "+2348098765432", 
-        email: "alex.morales@example.com", 
-        availability: false, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2348098765433?text=Delivery%20service%20request", 
-        languages: ["English", "Spanish"],
-        specialties: ["Electronics", "Grocery Delivery"]
-    },
-    
-      { 
-          id: 21, 
-          name: "Nathan Williams", 
-          bio: "Versatile delivery expert with a knack for navigating complex urban delivery challenges.", 
-          rating: 4.6, 
-          reviews: 127, 
-          vehicleType: "Motorcycle", 
-          areaOfOperation: "Downtown", 
-          completedDeliveries: 256, 
-          phone: "+2349023456789", 
-          email: "nathan.williams@example.com", 
-          availability: true, 
-          pictureUrl: profile1, 
-          whatsappLink: "https://wa.me/+2349023456790?text=Delivery%20service%20needed", 
-          languages: ["English", "German"],
-          specialties: ["Electronics", "Urgent Deliveries"]
-      },
-      { 
-          id: 22, 
-          name: "Zara Ahmed", 
-          bio: "Dedicated courier committed to providing exceptional and personalized delivery experiences.", 
-          rating: 4.8, 
-          reviews: 205, 
-          vehicleType: "Car", 
-          areaOfOperation: "Uptown", 
-          completedDeliveries: 389, 
-          phone: "+2348045678901", 
-          email: "zara.ahmed@example.com", 
-          availability: false, 
-          pictureUrl: profile2, 
-          whatsappLink: "https://wa.me/+2348045678902?text=Professional%20delivery%20inquiry", 
-          languages: ["English", "Arabic"],
-          specialties: ["Medical Supplies", "Large Furniture"]
-      },
-      { 
-          id: 23, 
-          name: "Diego Santos", 
-          bio: "Experienced delivery professional with a proven track record of reliability and customer satisfaction.", 
-          rating: 4.7, 
-          reviews: 156, 
-          vehicleType: "Bicycle", 
-          areaOfOperation: "Midtown", 
-          completedDeliveries: 276, 
-          phone: "+2349056789012", 
-          email: "diego.santos@example.com", 
-          availability: true, 
-          pictureUrl: profile3, 
-          whatsappLink: "https://wa.me/+2349056789013?text=Quick%20delivery%20service", 
-          languages: ["English", "Portuguese"],
-          specialties: ["Restaurant Meals", "Small Packages"]
-      },
-      { 
-          id: 24, 
-          name: "Olivia Chen", 
-          bio: "Skilled urban courier specializing in efficient and careful package transportation.", 
-          rating: 4.5, 
-          reviews: 98, 
-          vehicleType: "Scooter", 
-          areaOfOperation: "City Center", 
-          completedDeliveries: 212, 
-          phone: "+2348067890123", 
-          email: "olivia.chen@example.com", 
-          availability: false, 
-          pictureUrl: profile4, 
-          whatsappLink: "https://wa.me/+2348067890124?text=Delivery%20service%20request", 
-          languages: ["English", "Mandarin"],
-          specialties: ["Pharmacy Delivery", "Electronics"]
-      },
-      { 
-          id: 25, 
-          name: "Amir Khan", 
-          bio: "Adaptable delivery expert with extensive experience in managing diverse delivery challenges.", 
-          rating: 4.9, 
-          reviews: 234, 
-          vehicleType: "Van", 
-          areaOfOperation: "Suburbs", 
-          completedDeliveries: 412, 
-          phone: "+2349078901234", 
-          email: "amir.khan@example.com", 
-          availability: true, 
-          pictureUrl: profile5, 
-          whatsappLink: "https://wa.me/+2349078901235?text=Professional%20delivery%20needed", 
-          languages: ["English", "Urdu"],
-          specialties: ["Large Furniture", "Office Supplies"]
-      },
-      { 
-          id: 26, 
-          name: "Sophia Rodriguez", 
-          bio: "Dedicated courier known for exceptional customer service and precise delivery execution.", 
-          rating: 4.6, 
-          reviews: 134, 
-          vehicleType: "Motorcycle", 
-          areaOfOperation: "Downtown", 
-          completedDeliveries: 267, 
-          phone: "+2348089012345", 
-          email: "sophia.rodriguez@example.com", 
-          availability: false, 
-          pictureUrl: profile1, 
-          whatsappLink: "https://wa.me/+2348089012346?text=Urgent%20delivery%20service", 
-          languages: ["English", "Spanish"],
-          specialties: ["Grocery Delivery", "Urgent Deliveries"]
-      },
-      { 
-          id: 27, 
-          name: "Leo Patel", 
-          bio: "Efficient delivery professional with a strong focus on timely and secure package handling.", 
-          rating: 4.7, 
-          reviews: 178, 
-          vehicleType: "Car", 
-          areaOfOperation: "Uptown", 
-          completedDeliveries: 332, 
-          phone: "+2349090123456", 
-          email: "leo.patel@example.com", 
-          availability: true, 
-          pictureUrl: profile2, 
-          whatsappLink: "https://wa.me/+2349090123457?text=Delivery%20assistance%20request", 
-          languages: ["English", "Gujarati"],
-          specialties: ["Electronics", "Small Packages"]
-      },
-      { 
-          id: 28, 
-          name: "Aria Kim", 
-          bio: "Versatile urban courier committed to delivering exceptional service in complex city environments.", 
-          rating: 4.5, 
-          reviews: 112, 
-          vehicleType: "Bicycle", 
-          areaOfOperation: "Midtown", 
-          completedDeliveries: 245, 
-          phone: "+2348001234567", 
-          email: "aria.kim@example.com", 
-          availability: false, 
-          pictureUrl: profile3, 
-          whatsappLink: "https://wa.me/+2348001234568?text=Need%20delivery%20service", 
-          languages: ["English", "Korean"],
-          specialties: ["Restaurant Meals", "Medical Supplies"]
-      },
-      { 
-          id: 29, 
-          name: "Marcus Thompson", 
-          bio: "Professional delivery expert with a proven ability to handle complex logistics with ease.", 
-          rating: 4.8, 
-          reviews: 201, 
-          vehicleType: "Van", 
-          areaOfOperation: "Suburbs", 
-          completedDeliveries: 376, 
-          phone: "+2349012345678", 
-          email: "marcus.thompson@example.com", 
-          availability: true, 
-          pictureUrl: profile4, 
-          whatsappLink: "https://wa.me/+2349012345679?text=Professional%20delivery%20inquiry", 
-          languages: ["English", "French"],
-          specialties: ["Large Furniture", "Office Supplies"]
-      },
-      { 
-          id: 30, 
-          name: "Elena Morales", 
-          bio: "Dedicated courier with exceptional skills in navigating urban delivery landscapes.", 
-          rating: 4.6, 
-          reviews: 145, 
-          vehicleType: "Scooter", 
-          areaOfOperation: "City Center", 
-          completedDeliveries: 276, 
-          phone: "+2348023456789", 
-          email: "elena.morales@example.com", 
-          availability: false, 
-          pictureUrl: profile5, 
-          whatsappLink: "https://wa.me/+2348023456790?text=Quick%20delivery%20service", 
-          languages: ["English", "Spanish"],
-          specialties: ["Pharmacy Delivery", "Urgent Deliveries"]
-      },
-      { 
-          id: 31, 
-          name: "Jamal Hassan", 
-          bio: "Experienced delivery professional with a commitment to precision and customer satisfaction.", 
-          rating: 4.7, 
-          reviews: 167, 
-          vehicleType: "Motorcycle", 
-          areaOfOperation: "Downtown", 
-          completedDeliveries: 309, 
-          phone: "+2349034567890", 
-          email: "jamal.hassan@example.com", 
-          availability: true, 
-          pictureUrl: profile1, 
-          whatsappLink: "https://wa.me/+2349034567891?text=Delivery%20service%20needed", 
-          languages: ["English", "Arabic"],
-          specialties: ["Electronics", "Medical Supplies"]
-      },
-      { 
-          id: 32, 
-          name: "Nina Petrova", 
-          bio: "Skilled urban courier specializing in efficient and reliable package transportation.", 
-          rating: 4.5, 
-          reviews: 103, 
-          vehicleType: "Car", 
-          areaOfOperation: "Uptown", 
-          completedDeliveries: 234, 
-          phone: "+2348045678901", 
-          email: "nina.petrova@example.com", 
-          availability: false, 
-          pictureUrl: profile2, 
-          whatsappLink: "https://wa.me/+2348045678902?text=Urgent%20delivery%20request", 
-          languages: ["English", "Russian"],
-          specialties: ["Grocery Delivery", "Small Packages"]
-      },
-      { 
-          id: 33, 
-          name: "Carlos Ramirez", 
-          bio: "Adaptable delivery expert with a track record of handling diverse delivery challenges.", 
-          rating: 4.9, 
-          reviews: 221, 
-          vehicleType: "Bicycle", 
-          areaOfOperation: "Midtown", 
-          completedDeliveries: 412, 
-          phone: "+2349056789012", 
-          email: "carlos.ramirez@example.com", 
-          availability: true, 
-          pictureUrl: profile3, 
-          whatsappLink: "https://wa.me/+2349056789013?text=Professional%20delivery%20service", 
-          languages: ["English", "Portuguese"],
-          specialties: ["Restaurant Meals", "Large Furniture"]
-      },
-      { 
-          id: 34, 
-          name: "Emma Johannson", 
-          bio: "Dedicated courier committed to providing exceptional and personalized delivery experiences.", 
-          rating: 4.6, 
-          reviews: 139, 
-          vehicleType: "Van", 
-          areaOfOperation: "Suburbs", 
-          completedDeliveries: 276, 
-          phone: "+2348067890123", 
-          email: "emma.johannson@example.com", 
-          availability: false, 
-          pictureUrl: profile4, 
-          whatsappLink: "https://wa.me/+2348067890124?text=Delivery%20service%20inquiry", 
-          languages: ["English", "Swedish"],
-          specialties: ["Office Supplies", "Medical Supplies"]
-      },
-      { 
-          id: 35, 
-          name: "Raj Gupta", 
-          bio: "Efficient delivery professional with a strong focus on timely and secure package handling.", 
-          rating: 4.7, 
-          reviews: 156, 
-          vehicleType: "Scooter", 
-          areaOfOperation: "City Center", 
-          completedDeliveries: 287, 
-          phone: "+2349078901234", 
-          email: "raj.gupta@example.com", 
-          availability: true, 
-          pictureUrl: profile5, 
-          whatsappLink: "https://wa.me/+2349078901235?text=Quick%20delivery%20needed", 
-          languages: ["English", "Hindi"],
-          specialties: ["Electronics", "Pharmacy Delivery"]
-      },
-      { 
-          id: 36, 
-          name: "Lena Schmidt", 
-          bio: "Versatile urban courier specializing in complex delivery logistics and customer satisfaction.", 
-          rating: 4.5, 
-          reviews: 117, 
-          vehicleType: "Motorcycle", 
-          areaOfOperation: "Downtown", 
-          completedDeliveries: 245, 
-          phone: "+2348089012345", 
-          email: "lena.schmidt@example.com", 
-          availability: false, 
-          pictureUrl: profile1, 
-          whatsappLink: "https://wa.me/+2348089012346?text=Need%20delivery%20service", 
-          languages: ["English", "German"],
-          specialties: ["Urgent Deliveries", "Small Packages"]
-      },
-      { 
-          id: 37, 
-          name: "Yuki Tanaka", 
-          bio: "Experienced delivery professional with exceptional skills in urban package transportation.", 
-          rating: 4.8, 
-          reviews: 192, 
-          vehicleType: "Car", 
-          areaOfOperation: "Uptown", 
-          completedDeliveries: 367, 
-          phone: "+2349090123456", 
-          email: "yuki.tanaka@example.com", 
-          availability: true, 
-          pictureUrl: profile2, 
-          whatsappLink: "https://wa.me/+2349090123457?text=Professional%20delivery%20needed", 
-          languages: ["English", "Japanese"],
-          specialties: ["Large Furniture", "Electronics"]
-      },
-      { 
-          id: 38, 
-          name: "Ibrahim Ahmed", 
-          bio: "Dedicated courier known for reliable and precise delivery execution in challenging urban environments.", 
-          rating: 4.6, 
-          reviews: 134, 
-          vehicleType: "Bicycle", 
-          areaOfOperation: "Midtown", 
-          completedDeliveries: 267, 
-          phone: "+2348001234567", 
-          email: "ibrahim.ahmed@example.com", 
-          availability: false, 
-          pictureUrl: profile3, 
-          whatsappLink: "https://wa.me/+2348001234568?text=Urgent%20delivery%20service", 
-          languages: ["English", "Arabic"],
-          specialties: ["Medical Supplies", "Grocery Delivery"]
-      },
-      { 
-          id: 39, 
-          name: "Sofia Kovacevic", 
-          bio: "Professional delivery expert with a passion for efficient and customer-focused service.", 
-          rating: 4.7, 
-          reviews: 178, 
-          vehicleType: "Van", 
-          areaOfOperation: "Suburbs", 
-          completedDeliveries: 332, 
-          phone: "+2349012345678", 
-          email: "sofia.kovacevic@example.com", 
-          availability: true, 
-          pictureUrl: profile4, 
-          whatsappLink: "https://wa.me/+2349012345679?text=Delivery%20assistance%20request", 
-          languages: ["English", "Serbian"],
-          specialties: ["Office Supplies", "Urgent Deliveries"]
-      },
-      { 
-        id: 40, 
-        name: "Alex Wong", 
-        bio: "Innovative delivery professional with exceptional problem-solving skills in urban logistics.", 
-        rating: 4.7, 
-        reviews: 156, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 287, 
-        phone: "+2348012345678", 
-        email: "alex.wong@example.com", 
-        availability: true, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2348012345679?text=Quick%20delivery%20service", 
-        languages: ["English", "Cantonese"],
-        specialties: ["Electronics", "Small Packages"]
-    },
-    { 
-        id: 41, 
-        name: "Maria Rodriguez", 
-        bio: "Dedicated courier committed to providing exceptional and personalized delivery experiences.", 
-        rating: 4.8, 
-        reviews: 203, 
-        vehicleType: "Car", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 389, 
-        phone: "+2349023456789", 
-        email: "maria.rodriguez@example.com", 
-        availability: false, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2349023456790?text=Professional%20delivery%20inquiry", 
-        languages: ["English", "Spanish"],
-        specialties: ["Medical Supplies", "Urgent Deliveries"]
-    },
-    { 
-        id: 42, 
-        name: "Kwesi Osei", 
-        bio: "Experienced delivery professional with a proven track record of reliability and customer satisfaction.", 
-        rating: 4.6, 
-        reviews: 134, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 267, 
-        phone: "+2348034567890", 
-        email: "kwesi.osei@example.com", 
-        availability: true, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2348034567891?text=Delivery%20service%20needed", 
-        languages: ["English", "Twi"],
-        specialties: ["Grocery Delivery", "Small Packages"]
-    },
-    { 
-        id: 43, 
-        name: "Anastasia Petrova", 
-        bio: "Skilled urban courier specializing in efficient and careful package transportation.", 
-        rating: 4.5, 
-        reviews: 112, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 234, 
-        phone: "+2349045678901", 
-        email: "anastasia.petrova@example.com", 
-        availability: false, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2349045678902?text=Urgent%20delivery%20request", 
-        languages: ["English", "Russian"],
-        specialties: ["Restaurant Meals", "Electronics"]
-    },
-    { 
-        id: 44, 
-        name: "Jamal Thompson", 
-        bio: "Adaptable delivery expert with extensive experience in managing diverse delivery challenges.", 
-        rating: 4.9, 
-        reviews: 234, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 412, 
-        phone: "+2348056789012", 
-        email: "jamal.thompson@example.com", 
-        availability: true, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2348056789013?text=Professional%20delivery%20service", 
-        languages: ["English", "French"],
-        specialties: ["Large Furniture", "Office Supplies"]
-    },
-    { 
-        id: 45, 
-        name: "Mei Lin Chen", 
-        bio: "Dedicated courier known for exceptional customer service and precise delivery execution.", 
-        rating: 4.7, 
-        reviews: 167, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 309, 
-        phone: "+2349067890123", 
-        email: "meilin.chen@example.com", 
-        availability: false, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2349067890124?text=Quick%20delivery%20service", 
-        languages: ["English", "Mandarin"],
-        specialties: ["Pharmacy Delivery", "Urgent Deliveries"]
-    },
-    { 
-        id: 46, 
-        name: "Ahmed Hassan", 
-        bio: "Efficient delivery professional with a strong focus on timely and secure package handling.", 
-        rating: 4.6, 
-        reviews: 139, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 276, 
-        phone: "+2348078901234", 
-        email: "ahmed.hassan@example.com", 
-        availability: true, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2348078901235?text=Delivery%20service%20inquiry", 
-        languages: ["English", "Arabic"],
-        specialties: ["Electronics", "Medical Supplies"]
-    },
-    { 
-        id: 47, 
-        name: "Elena Kovacs", 
-        bio: "Versatile urban courier specializing in complex delivery logistics and customer satisfaction.", 
-        rating: 4.5, 
-        reviews: 117, 
-        vehicleType: "Car", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 245, 
-        phone: "+2349089012345", 
-        email: "elena.kovacs@example.com", 
-        availability: false, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2349089012346?text=Need%20delivery%20service", 
-        languages: ["English", "Hungarian"],
-        specialties: ["Grocery Delivery", "Small Packages"]
-    },
-    { 
-        id: 48, 
-        name: "Carlos Mendes", 
-        bio: "Professional delivery expert with a proven ability to handle complex urban delivery challenges.", 
-        rating: 4.8, 
-        reviews: 192, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 367, 
-        phone: "+2348090123456", 
-        email: "carlos.mendes@example.com", 
-        availability: true, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2348090123457?text=Professional%20delivery%20needed", 
-        languages: ["English", "Portuguese"],
-        specialties: ["Restaurant Meals", "Large Furniture"]
-    },
-    { 
-        id: 49, 
-        name: "Aisha Patel", 
-        bio: "Dedicated courier committed to providing exceptional and personalized delivery experiences.", 
-        rating: 4.6, 
-        reviews: 145, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 287, 
-        phone: "+2349001234567", 
-        email: "aisha.patel@example.com", 
-        availability: false, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2349001234568?text=Urgent%20delivery%20service", 
-        languages: ["English", "Gujarati"],
-        specialties: ["Office Supplies", "Medical Supplies"]
-    },
-    { 
-        id: 50, 
-        name: "Ryan O'Connor", 
-        bio: "Experienced delivery professional with exceptional skills in urban package transportation.", 
-        rating: 4.7, 
-        reviews: 178, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 332, 
-        phone: "+2348012345678", 
-        email: "ryan.oconnor@example.com", 
-        availability: true, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2348012345679?text=Delivery%20assistance%20request", 
-        languages: ["English", "Irish"],
-        specialties: ["Electronics", "Urgent Deliveries"]
-    },
-    { 
-        id: 51, 
-        name: "Sophia Kim", 
-        bio: "Innovative delivery professional with a passion for efficient and customer-focused service.", 
-        rating: 4.5, 
-        reviews: 103, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 234, 
-        phone: "+2349023456789", 
-        email: "sophia.kim@example.com", 
-        availability: false, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2349023456790?text=Need%20delivery%20service", 
-        languages: ["English", "Korean"],
-        specialties: ["Pharmacy Delivery", "Small Packages"]
-    },
-    { 
-        id: 52, 
-        name: "Ibrahim Mohammed", 
-        bio: "Dedicated courier known for reliable and precise delivery execution in challenging urban environments.", 
-        rating: 4.8, 
-        reviews: 221, 
-        vehicleType: "Car", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 389, 
-        phone: "+2348034567890", 
-        email: "ibrahim.mohammed@example.com", 
-        availability: true, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2348034567891?text=Professional%20delivery%20service", 
-        languages: ["English", "Arabic"],
-        specialties: ["Medical Supplies", "Large Furniture"]
-    },
-    { 
-        id: 53, 
-        name: "Nina Volkov", 
-        bio: "Skilled urban courier specializing in efficient and reliable package transportation.", 
-        rating: 4.6, 
-        reviews: 134, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 267, 
-        phone: "+2349045678901", 
-        email: "nina.volkov@example.com", 
-        availability: false, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2349045678902?text=Urgent%20delivery%20request", 
-        languages: ["English", "Russian"],
-        specialties: ["Restaurant Meals", "Grocery Delivery"]
-    },
-    { 
-        id: 54, 
-        name: "Lucas Santos", 
-        bio: "Adaptable delivery expert with a track record of handling diverse delivery challenges.", 
-        rating: 4.7, 
-        reviews: 156, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 309, 
-        phone: "+2348056789012", 
-        email: "lucas.santos@example.com", 
-        availability: true, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2348056789013?text=Delivery%20service%20needed", 
-        languages: ["English", "Portuguese"],
-        specialties: ["Office Supplies", "Urgent Deliveries"]
-    },
-    { 
-        id: 55, 
-        name: "Emma Nyström", 
-        bio: "Efficient delivery professional with exceptional problem-solving skills in urban logistics.", 
-        rating: 4.5, 
-        reviews: 112, 
-        vehicleType: "Scooter", 
-        areaOfOperation: "City Center", 
-        completedDeliveries: 234, 
-        phone: "+2349067890123", 
-        email: "emma.nystrom@example.com", 
-        availability: false, 
-        pictureUrl: profile5, 
-        whatsappLink: "https://wa.me/+2349067890124?text=Quick%20delivery%20service", 
-        languages: ["English", "Swedish"],
-        specialties: ["Electronics", "Small Packages"]
-    },
-    { 
-        id: 56, 
-        name: "Ravi Gupta", 
-        bio: "Professional delivery expert with a commitment to precision and customer satisfaction.", 
-        rating: 4.9, 
-        reviews: 234, 
-        vehicleType: "Motorcycle", 
-        areaOfOperation: "Downtown", 
-        completedDeliveries: 412, 
-        phone: "+2348078901234", 
-        email: "ravi.gupta@example.com", 
-        availability: true, 
-        pictureUrl: profile1, 
-        whatsappLink: "https://wa.me/+2348078901235?text=Professional%20delivery%20needed", 
-        languages: ["English", "Hindi"],
-        specialties: ["Medical Supplies", "Large Furniture"]
-    },
-    { 
-        id: 57, 
-        name: "Isabella Martinez", 
-        bio: "Versatile courier known for exceptional customer service and adaptive delivery strategies.", 
-        rating: 4.6, 
-        reviews: 139, 
-        vehicleType: "Car", 
-        areaOfOperation: "Uptown", 
-        completedDeliveries: 276, 
-        phone: "+2349089012345", 
-        email: "isabella.martinez@example.com", 
-        availability: false, 
-        pictureUrl: profile2, 
-        whatsappLink: "https://wa.me/+2349089012346?text=Delivery%20service%20inquiry", 
-        languages: ["English", "Spanish"],
-        specialties: ["Grocery Delivery", "Pharmacy Delivery"]
-    },
-    { 
-        id: 58, 
-        name: "Kwame Nkrumah", 
-        bio: "Dedicated delivery professional with a passion for efficient urban package transportation.", 
-        rating: 4.7, 
-        reviews: 167, 
-        vehicleType: "Bicycle", 
-        areaOfOperation: "Midtown", 
-        completedDeliveries: 332, 
-        phone: "+2348090123456", 
-        email: "kwame.nkrumah@example.com", 
-        availability: true, 
-        pictureUrl: profile3, 
-        whatsappLink: "https://wa.me/+2348090123457?text=Need%20delivery%20service", 
-        languages: ["English", "Twi"],
-        specialties: ["Restaurant Meals", "Small Packages"]
-    },
-    { 
-        id: 59, 
-        name: "Zoe Nakamura", 
-        bio: "Innovative urban courier specializing in complex delivery logistics and customer-focused solutions.", 
-        rating: 4.5, 
-        reviews: 117, 
-        vehicleType: "Van", 
-        areaOfOperation: "Suburbs", 
-        completedDeliveries: 245, 
-        phone: "+2349001234567", 
-        email: "zoe.nakamura@example.com", 
-        availability: false, 
-        pictureUrl: profile4, 
-        whatsappLink: "https://wa.me/+2349001234568?text=Urgent%20delivery%20service", 
-        languages: ["English", "Japanese"],
-        specialties: ["Electronics", "Office Supplies"]
-    }
-  
-  ]
+ ]
   const values = {
     agents
   }
